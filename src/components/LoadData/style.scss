@@ -1,0 +1,23 @@
+@import "/src/configStyle";
+
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
+.load-content {
+  margin: 20px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: $gapSmall + px;
+
+  .load-content__title {
+    font-weight: 500;
+    font-size: 26px;
+  }
+  .load-content__desc {
+    font-weight: 500;
+    font-size: 20px;
+  }
+}

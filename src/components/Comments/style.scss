@@ -1,0 +1,59 @@
+@import "/src/configStyle";
+
+.comment-input {
+  margin-top: 16px;
+  display: flex;
+  gap: $gapSmall + px;
+
+  @media screen and (max-width: $mobileWidth) {
+    flex-direction: column;
+  }
+}
+
+.comment {
+  flex: 1 1 auto;
+  border: 2px solid $mainBlackColor;
+  padding: 10px;
+  border-radius: $borderRadius;
+  display: flex;
+  flex-direction: column;
+  gap: $gapSmall + px;
+  margin-top: 8px;
+
+  .comment-header {
+    .comment-header__text {
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+  .comment-main {
+    display: flex;
+    gap: $gapSmall + px;
+    align-items: center;
+
+    @media screen and (max-width: $mobileWidth) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .comment-main__author {
+      font-weight: 400;
+      font-size: 16px;
+    }
+    .comment-main__time {
+      font-weight: 400;
+      font-size: 16px;
+      flex: 1 1 auto;
+    }
+    .comment-main__hide {
+    }
+    .comment-main__like {
+      cursor: pointer;
+      display: flex;
+      gap: $gapSmall + px;
+      align-items: center;
+      font-weight: 400;
+      font-size: 24px;
+    }
+  }
+}

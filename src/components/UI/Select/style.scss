@@ -1,0 +1,67 @@
+@import "/src/configStyle";
+
+.container-input {
+  flex: 1 1 auto;
+  position: relative;
+  border: 2px solid $mainBlackColor;
+  padding: 20px 10px 10px;
+  border-radius: $borderRadius;
+  display: flex;
+  gap: $gapSmall + px;
+  align-items: center;
+
+  &,
+  * {
+    cursor: pointer;
+    transition: all 0.1s;
+  }
+
+  .wrapper-input {
+    flex: 1 1 auto;
+  }
+
+  .label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    transform: translateY(-50%);
+    user-select: none;
+    pointer-events: none;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    span {
+      font-size: 12px;
+      vertical-align: center;
+      font-weight: 500;
+    }
+
+    &.focus {
+      top: 20%;
+      transform: translateY(-50%);
+      font-size: 14px;
+    }
+  }
+
+  .select {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    font-size: 16px;
+    height: 24px;
+  }
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

@@ -1,0 +1,113 @@
+@import "/src/configStyle";
+
+.header {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $gap + px;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 36px;
+    span {
+      font-weight: 500;
+      font-size: 30px;
+    }
+  }
+  .sign-in-block {
+    font-size: 18px;
+  }
+  .sign-up-block {
+    font-size: 18px;
+  }
+
+  .button-panel {
+    display: flex;
+    gap: $gapSmall + px;
+  }
+
+  .title-header {
+    display: none;
+  }
+
+  @media screen and (max-width: $mobileWidth) {
+    & {
+      .container {
+        position: fixed;
+        background: $mainWhiteColor;
+        z-index: 99;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        bottom: 0;
+        transition: all 0.3s;
+        transform: translateX(-100%);
+
+        &.open {
+          transform: translateX(0);
+        }
+      }
+
+      .title-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+
+        .title-header-hide {
+          transition: all 0.3s;
+          transform: translateX(0);
+
+          &.active {
+            transform: translateX(-100%);
+            opacity: 0;
+            overflow: hidden;
+          }
+        }
+      }
+
+      .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s;
+
+        span {
+          display: block;
+          width: 100%;
+          height: 4px;
+          border-radius: 10px;
+          background: $mainBlackColor;
+          transition: all 0.3s;
+        }
+
+        &.open {
+          transform: translateY(-6px);
+
+          span {
+            transform: scale(0);
+          }
+          span:first-child {
+            transform: rotate(-45deg) translate(-12px, 10px);
+          }
+          span:last-child {
+            transform: rotate(45deg) translate(-4px, -2px);
+          }
+        }
+      }
+    }
+    .container {
+      flex-direction: column;
+      align-items: stretch;
+      .button-panel {
+        flex-direction: column;
+      }
+    }
+  }
+}

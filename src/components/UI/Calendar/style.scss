@@ -1,0 +1,106 @@
+@import "/src/configStyle";
+
+.react-calendar__tile {
+  border-radius: $borderRadius;
+}
+
+.react-calendar__tile--now {
+  background: $mainGreyColor !important;
+
+  &,
+  * {
+    color: $mainBlackColor !important;
+  }
+}
+
+.react-calendar__tile--hover {
+  background: $mainBlackColor !important;
+
+  &,
+  * {
+    color: $mainWhiteColor !important;
+  }
+}
+
+.react-calendar__tile--range {
+  background: $mainBlackColor !important;
+
+  &,
+  * {
+    color: $mainWhiteColor !important;
+  }
+}
+
+.container-calendar {
+  flex: 1 1 auto;
+  position: relative;
+  border: 2px solid $mainBlackColor;
+  padding: 20px 10px 10px;
+  border-radius: $borderRadius;
+
+  &.error-color {
+    border: 2px solid $mainRedColor;
+    animation: error 0.8s ease-in-out;
+  }
+
+  &.success-color {
+    border: 2px solid $mainGreenColor;
+  }
+
+  &,
+  * {
+    cursor: pointer;
+  }
+
+  .error,
+  .success {
+    width: 24px;
+    height: 24px;
+
+    * {
+      max-width: 100%;
+    }
+  }
+
+  .label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    transform: translateY(-50%);
+    transition: all 0.1s;
+    user-select: none;
+    pointer-events: none;
+
+    &.focus {
+      top: 20%;
+      transform: translateY(-50%);
+      font-size: 14px;
+    }
+  }
+
+  .wrapper-input {
+    display: flex;
+  }
+
+  .input {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 24px;
+    font-size: 16px;
+    flex: 1 1 auto;
+  }
+
+  .calendar {
+    position: absolute;
+    width: 100%;
+    top: calc(100% + 5px);
+    left: 0;
+    border-radius: $borderRadius;
+    overflow: hidden;
+    z-index: 5 !important;
+    padding: 4px;
+  }
+}

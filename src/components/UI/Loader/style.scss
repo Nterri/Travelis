@@ -1,0 +1,47 @@
+@import "/src/configStyle";
+
+#arcs {
+  div {
+    border: 2px solid $mainBlackColor;
+    display: inline-block;
+    min-width: 10px;
+    min-height: 10px;
+    padding: 5px;
+    border-radius: 50%;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+
+    animation-duration: 4s;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+  }
+
+  &.white {
+    div {
+      border: 2px solid $mainWhiteColor;
+      display: inline-block;
+      min-width: 10px;
+      min-height: 10px;
+      padding: 5px;
+      border-radius: 50%;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+
+      animation-duration: 4s;
+      animation-name: rotate;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

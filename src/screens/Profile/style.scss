@@ -1,0 +1,270 @@
+@import "/src/configStyle";
+
+.profile {
+  .profile-content {
+    .profile-content__table {
+      border-collapse: collapse;
+
+      tr {
+        td {
+          border: 2px solid $mainBlackColor;
+          padding: 10px;
+          width: 300px;
+
+          &:first-child {
+            font-weight: 700;
+            font-size: 20px;
+          }
+          &:last-child {
+            font-weight: 500;
+            font-size: 20px;
+          }
+
+          span {
+            font-weight: 500;
+            font-size: 18px;
+            color: $mainRedColor;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      @media screen and (max-width: $mobileWidth) {
+        & {
+          width: 100%;
+          tr {
+            display: flex;
+            flex-direction: column;
+
+            &:not(:last-child) {
+              border-bottom: 2px solid $mainBlackColor;
+            }
+
+            td {
+              border: 0;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .profile-content__admin-panel {
+      margin-top: 16px;
+
+      .block-content__list {
+        flex-direction: column;
+        gap: $gapSmall + px;
+      }
+
+      .user {
+        border-collapse: collapse;
+
+        thead {
+          tr {
+            td {
+              font-weight: 500;
+              font-size: 18px;
+            }
+          }
+        }
+
+        tr {
+          td {
+            border: 2px solid $mainBlackColor;
+            padding: 10px;
+            font-weight: 400;
+            font-size: 16px;
+          }
+        }
+
+        @media screen and (max-width: $mobileWidth) {
+          width: 100%;
+          tr {
+            display: flex;
+            flex-direction: column;
+
+            &:not(:last-child) {
+              border-bottom: 2px solid $mainBlackColor;
+            }
+
+            td {
+              border: 0;
+              width: 100%;
+            }
+          }
+
+          thead {
+            display: none;
+          }
+        }
+      }
+
+      .profile-content__admin-panel__btn {
+        margin: 16px 0;
+      }
+
+      .article-title {
+        margin-top: 16px;
+      }
+
+      .subject-block {
+        display: flex;
+        align-items: center;
+        gap: $gapSmall + px;
+        max-width: $maxWidth;
+
+        .subject-block__name {
+          flex: 1 1 auto;
+          font-weight: 400;
+          font-size: 16px;
+        }
+
+        @media screen and (max-width: $mobileWidth) {
+          max-width: 100%;
+        }
+      }
+
+      .subjects-input {
+        margin-top: 16px;
+        display: flex;
+        gap: $gapSmall + px;
+        max-width: $maxWidth;
+
+        @media screen and (max-width: $mobileWidth) {
+          flex-direction: column;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.chat {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 100%;
+  height: 100vh;
+  max-height: 80vh;
+
+  .chat-sidebar {
+    flex: 0 1 300px;
+    border-right: 1px solid $mainBlackColor;
+    padding: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    .chat-sidebar__title {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .chat_btn {
+      padding: 10px;
+      border-radius: $borderRadius;
+      border: 2px solid $mainBlackColor;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      background: $mainWhiteColor;
+      color: $mainBlackColor;
+
+      &.active {
+        color: $mainWhiteColor;
+        background: $mainBlackColor;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      flex: 1 1 auto;
+      display: none;
+      border-right: 0;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  .chat-content {
+    flex: 1 1 auto;
+    min-height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: $gapSmall + px;
+
+    .chat-content__back {
+      display: none;
+      max-width: max-content;
+      margin-bottom: 8px;
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      display: none;
+
+      &.active {
+        display: flex;
+      }
+
+      .chat-content__back {
+        display: block;
+      }
+    }
+
+    .chat-content__name {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    .chat-content__list {
+      flex: 1 1 auto;
+      overflow: hidden;
+      overflow-y: scroll;
+
+      .chat-content__list-item {
+        display: flex;
+        gap: $gapSmall + px;
+        padding: 10px;
+        border-radius: $borderRadius;
+        border: 2px solid $mainBlackColor;
+        max-width: 400px;
+
+        &.from {
+          margin: 0 0 0 auto;
+        }
+
+        .chat-content__list-item__text {
+          flex: 1 1 auto;
+          font-weight: 600;
+          font-size: 14px;
+        }
+        .chat-content__list-item__time {
+          font-weight: 500;
+          font-size: 14px;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+
+.tour-user {
+  margin: 16px 0;
+
+  .profile-content__tour-item {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    width: max-content;
+  }
+}

@@ -1,0 +1,23 @@
+$mainColor: #ffd4a5;
+$mainBlackColor: #111111;
+$mainRedColor: #ff0000;
+$mainGreenColor: #008000;
+$mainBackgroundColor: rgba(17, 17, 17, 0.75);
+$mainWhiteColor: #ffffff;
+$mainGreyColor: #d3d3d3;
+
+$borderRadius: 16px;
+$gap: 16;
+$gapSmall: 6;
+$maxWidth: 600px;
+$container: 1170;
+$mobileWidth: 992px;
+$smallMobileWidth: 600px;
+
+.container {
+  max-width: $container + 30 + px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+}

@@ -1,0 +1,47 @@
+@import "/src/configStyle";
+
+.button {
+  display: block;
+  background: transparent;
+  border: 2px solid $mainBlackColor;
+  padding: 10px 20px;
+  border-radius: $borderRadius;
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+
+  .button-content {
+    font-weight: 500;
+    font-size: 16px;
+    color: $mainBlackColor;
+    z-index: 2;
+    position: relative;
+  }
+
+  .button-background {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0;
+    color: $mainWhiteColor;
+    height: 200%;
+    transition: all 0.2s ease-out;
+    background: $mainBlackColor;
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+
+  &:hover {
+    .button-content {
+      color: $mainWhiteColor;
+    }
+    .button-background {
+      background: $mainBlackColor;
+      left: 0;
+      right: auto;
+      width: 100%;
+    }
+  }
+}

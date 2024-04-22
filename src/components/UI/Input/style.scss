@@ -1,0 +1,146 @@
+@import "/src/configStyle";
+
+.container-input {
+  flex: 1 1 auto;
+  position: relative;
+  border: 2px solid $mainBlackColor;
+  padding: 20px 10px 10px;
+  border-radius: $borderRadius;
+  display: flex;
+  gap: $gapSmall + px;
+  align-items: center;
+
+  &.file {
+    padding: 10px;
+  }
+
+  &.error-color {
+    border: 2px solid $mainRedColor;
+    animation: error 0.8s ease-in-out;
+  }
+
+  &.success-color {
+    border: 2px solid $mainGreenColor;
+  }
+
+  &,
+  * {
+    cursor: pointer;
+    transition: all 0.1s;
+  }
+
+  .wrapper-input {
+    flex: 1 1 auto;
+  }
+
+  .label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    transform: translateY(-50%);
+    user-select: none;
+    pointer-events: none;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    span {
+      font-size: 12px;
+      vertical-align: center;
+      font-weight: 500;
+    }
+
+    &.focus {
+      top: 20%;
+      transform: translateY(-50%);
+      font-size: 14px;
+    }
+  }
+
+  .image_load {
+    border-radius: $borderRadius;
+    overflow: hidden;
+    max-width: $maxWidth;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .load_btn {
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .input {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    font-size: 16px;
+    height: 24px;
+  }
+
+  .eyes,
+  .error,
+  .success {
+    width: 24px;
+    height: 24px;
+
+    * {
+      max-width: 100%;
+    }
+  }
+
+  .eyes {
+    position: relative;
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: calc(sqrt(22 * 22 + 22 * 22)) + px;
+      max-width: calc(sqrt(22 * 22 + 22 * 22)) + px;
+      height: 2.5px;
+      border-radius: $borderRadius;
+      background: $mainBlackColor;
+      transform: rotate(45deg) translate(-12px, 10px);
+    }
+  }
+
+  input[type="file"] {
+    cursor: pointer;
+    position: absolute;
+    font-size: 0;
+    display: unset;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    &::file-selector-button {
+      display: none;
+    }
+  }
+}
+
+@keyframes error {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+  75% {
+    transform: translateX(-6px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

@@ -1,0 +1,72 @@
+@import "/src/configStyle";
+
+.modal {
+  z-index: 3;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $mainBackgroundColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  transform: translateY(-100%);
+
+  &.isVisible {
+    transform: translateY(0);
+  }
+
+  .modal-content {
+    background: $mainWhiteColor;
+    max-width: $maxWidth;
+    width: 100%;
+    padding: 16px;
+    border-radius: $borderRadius;
+
+    .modal-content__header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: $gap + px;
+
+      .modal-content__title {
+        font-weight: 700;
+        font-size: 30px;
+      }
+
+      .modal-content__close {
+        position: relative;
+        min-width: 30px;
+        min-height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 2px;
+
+        span {
+          position: absolute;
+          display: block;
+          width: 36px;
+          height: 4px;
+          border-radius: $borderRadius;
+          background: $mainBlackColor;
+
+          &:first-child {
+            transform: rotate(-45deg);
+          }
+          &:last-child {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+
+    button {
+      min-height: 55px;
+    }
+  }
+}

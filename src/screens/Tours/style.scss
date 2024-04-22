@@ -1,0 +1,62 @@
+@import "/src/configStyle";
+
+.tour {
+  .tour-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    gap: $gap + px;
+    margin-bottom: 16px;
+
+    .tour-header__title {
+      font-weight: 700;
+      font-size: 26px;
+    }
+    .tour-header__back {
+    }
+  }
+
+  .tour-main {
+    display: flex;
+    flex-direction: column;
+    gap: $gap + px;
+
+    .tour-main__image {
+      max-width: $maxWidth;
+      overflow: hidden;
+      border-radius: $borderRadius;
+
+      img {
+        max-width: 100%;
+      }
+    }
+    .tour-main__desc {
+      font-weight: 500;
+      font-size: 20px;
+    }
+    .tour-main__city {
+      font-weight: 500;
+      font-size: 20px;
+    }
+    .tour-main__date {
+      span {
+        display: block;
+        font-weight: 500;
+        font-size: 20px;
+      }
+    }
+    .tour-main__price {
+      font-weight: 500;
+      font-size: 18px;
+      span {
+        font-weight: 500;
+        font-size: 20px;
+      }
+    }
+
+    .tour-main__buy {
+      margin-bottom: 16px;
+    }
+  }
+}

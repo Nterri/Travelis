@@ -1,0 +1,25 @@
+@import "/src/configStyle";
+
+.form-travel {
+  .form-title {
+    font-weight: 700;
+    font-size: 30px;
+  }
+
+  .form-travel {
+    display: flex;
+    gap: $gap + px;
+
+    .form-travel__item {
+      flex: 1 1 30%;
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      flex-direction: column;
+    }
+  }
+
+  .search {
+    font-size: 18px;
+  }
+}

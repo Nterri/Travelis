@@ -1,0 +1,22 @@
+@import "/src/configStyle";
+
+.partner__list {
+  display: flex;
+  flex-direction: column;
+  gap: $gapSmall + px;
+
+  .link {
+    flex: 1 1 auto;
+    border: 2px solid $mainBlackColor;
+    padding: 10px 20px;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+    font-weight: 500;
+    font-size: 16px;
+    color: $mainBlackColor;
+    text-align: center;
+  }
+}

@@ -1,0 +1,31 @@
+@import "/src/configStyle";
+
+.pagination {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .pagination-container {
+  }
+  .pagination-page,
+  .pagination-prev,
+  .pagination-next {
+    list-style-type: none;
+    margin: 0;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid $buttonColor;
+    color: $buttonColor;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .pagination-page {
+  }
+  .pagination-prev {
+  }
+  .pagination-next {
+  }
+}

@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import "/src/configStyle";
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  * {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 14px;
+    color: $mainBlackColor;
+    text-decoration: none;
+  }
+
+  .block-user-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    font-weight: 700;
+    font-size: 24px;
+  }
+}

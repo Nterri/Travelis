@@ -1,0 +1,41 @@
+@import "/src/configStyle";
+
+.block-content {
+  .block-content__title {
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 30px;
+  }
+
+  .block-content__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: $gap + px;
+
+    .block-content__list-item {
+      flex: 0 0 calc(($container - $gap * 3) / 4) + px;
+      max-width: calc(($container - $gap * 3) / 4) + px;
+    }
+    .block-content__list-item__empty {
+      font-weight: 600;
+      font-size: 20px;
+      text-align: center;
+      flex: 1 1 auto;
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      .block-content__list-item {
+        flex: 0 1 48%;
+        max-width: 100%;
+      }
+    }
+    @media screen and (max-width: $smallMobileWidth) {
+      flex-direction: column;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 78px;
+  }
+}
